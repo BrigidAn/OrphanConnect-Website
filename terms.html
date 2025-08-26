@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use - OrphanConnect</title>
+<style>
+body { font-family: 'Roboto', sans-serif; margin:0; color:#333; line-height:1.6; }
+header { background: linear-gradient(135deg, #a6f0ff, #ffffff); text-align:center; padding:80px 20px; color:#333; }
+header h1 { font-size:2.5rem; margin-bottom:10px; }
+header p { font-size:1.1rem; max-width:600px; margin:auto; }
+section { max-width:800px; margin:40px auto; padding:0 20px; opacity:0; transform:translateY(50px); transition:all 0.8s ease; }
+h2 { color:#00796b; margin-bottom:15px; }
+ul { margin-left:20px; margin-bottom:20px; }
+footer { background:#5eafa5; color:white; text-align:center; padding:20px; }
+.show { opacity:1; transform:translateY(0); }
+@media(max-width:768px){ header h1{font-size:2rem;} }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Terms of Use</h1>
+    <p>By using OrphanConnect, you agree to these terms. Please read them carefully.</p>
+</header>
+
+<section>
+    <h2>1. Use of Services</h2>
+    <ul>
+        <li>Use the app for lawful purposes only.</li>
+        <li>Do not disrupt or interfere with the app.</li>
+        <li>Do not harass, abuse, or harm others.</li>
+    </ul>
+
+    <h2>2. Account Responsibility</h2>
+    <p>Keep your login credentials secure. You are responsible for all activity under your account.</p>
+
+    <h2>3. Intellectual Property</h2>
+    <p>All content, logos, and trademarks are owned by OrphanConnect. Do not use without permission.</p>
+
+    <h2>4. Donations and Payments</h2>
+    <p>All donations are final. We are not liable for payment processing errors or disputes with payment providers.</p>
+
+    <h2>5. Limitation of Liability</h2>
+    <p>OrphanConnect is provided "as is." We are not liable for indirect, incidental, or consequential damages.</p>
+
+    <h2>6. Changes to Terms</h2>
+    <p>We may update these terms occasionally. Major changes will be notified in-app or via email.</p>
+
+    <h2>7. Contact</h2>
+    <p>Questions about these terms? Contact <strong>support@orphanconnect.com</strong>.</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 OrphanConnect. All rights reserved.</p>
+    <p><a href="privacy.html" style="color:white;">Privacy Policy</a> | <a href="index.html" style="color:white;">Home</a></p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section, header');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('show'); }
+    });
+}, { threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

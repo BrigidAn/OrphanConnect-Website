@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrphanConnect</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Base styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; color: #333; scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+section, header { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+
+/* Navigation */
+nav { position: fixed; top:0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px 20px; display: flex; justify-content: center; gap: 30px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+nav a { font-weight: 700; color: #00796b; }
+nav a:hover { color: #004d40; }
+
+/* Hero Section */
+header {
+    background: linear-gradient(135deg, #a6f0ff, #ffffff);
+    text-align: center;
+    padding: 120px 20px 80px 20px;
+}
+header img { width: 120px; margin-bottom: 20px; animation: bounce 2s infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; max-width: 500px; margin: 0 auto 40px auto; }
+.download-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.download-buttons a {
+    padding: 15px 30px; border-radius: 50px; text-decoration: none; color: white; font-weight: 700;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.download-buttons a:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.google-play { background: linear-gradient(45deg, #3bccff, #0099ff); }
+.app-store { background: linear-gradient(45deg, #333, #000); }
+
+/* About Section */
+.about { background: #f9f9f9; text-align: center; padding:50px 20px; }
+.about h2 { margin-bottom: 20px; }
+.about p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+
+/* Features Section */
+.features { background:#f0f8ff; text-align:center; padding:50px 20px; }
+.features h2 { margin-bottom:30px; }
+.feature-cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.feature-card {
+    background:white; border-radius:15px; padding:20px; width:250px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;
+}
+.feature-card img { width:60px; margin-bottom:15px; }
+.feature-card:hover { transform: translateY(-5px); }
+.feature-card h3 { margin-bottom:10px; }
+
+/* Screenshots Section */
+.screenshots { text-align: center; background: #ffffff; padding:50px 20px; }
+.screenshots h2 { margin-bottom: 30px; }
+.carousel { display: flex; overflow-x: auto; gap: 20px; scroll-snap-type: x mandatory; padding-bottom: 20px; }
+.carousel img { width: 250px; border-radius: 20px; scroll-snap-align: start; transition: transform 0.3s; }
+.carousel img:hover { transform: scale(1.05); }
+
+/* Testimonials Section */
+.testimonials { background: linear-gradient(135deg, #ffffff, #e0f7fa); color: #333; text-align: center; padding:50px 20px; }
+.testimonials h2 { margin-bottom: 30px; }
+.testimonial { background: #ffffff; margin: 20px auto; padding: 20px; border-radius: 15px; max-width: 400px; font-style: italic; }
+
+/* Contact Section */
+.contact { background: linear-gradient(135deg, #e0f7fa, #ffffff); color: #333; text-align: center; padding:50px 20px; }
+.contact h2 { margin-bottom: 20px; }
+.contact form { display: flex; flex-direction: column; max-width: 400px; margin: auto; gap: 10px; }
+.contact input, .contact textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+.contact button { background: #00796b; color: white; padding: 15px; border: none; border-radius: 50px; cursor: pointer; transition: background 0.3s; }
+.contact button:hover { background: #60938b; }
+
+/* Footer */
+footer { background: #5eafa5; color: white; text-align: center; padding: 20px; }
+
+/* Fade-in effect */
+.show { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media(max-width:768px){ header h1{font-size:2.2rem;} .carousel img{width:200px;} nav { gap: 15px; } .feature-card{width:200px;} }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+
+<!-- Hero Section -->
+<header id="hero">
+    <img src="Orphan1.png" alt="OrphanConnect Logo">
+    <h1>OrphanConnect</h1>
+    <p>Connecting volunteers and orphanages, one app at a time. Download the app to start making a difference today!</p>
+    <div class="download-buttons">
+        <a class="google-play" href="https://play.google.com/store/apps/details?id=com.connect.orphanconnect&pcampaignid=web_share" target="_blank">Google Play</a>
+        <a class="app-store" href="https://apps.apple.com/app/idyour_app_id" target="_blank">App Store</a>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>About OrphanConnect</h2>
+    <p>OrphanConnect is a mobile application designed to bridge the gap between volunteers and orphanages. Our mission is to make it easy for people to find orphanages, contribute, volunteer, and track the impact of their efforts. The app allows users to support children in need, and make meaningful connections with local communities.</p>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features" style="background:#f0f8ff; text-align:center; padding:50px 20px;">
+    <h2>App Features</h2>
+    <div class="feature-cards" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;">
+        
+        <div class="feature-card" style="background:white; border-radius:15px; padding:20px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+            <img src="volunteer-icon.png" alt="Volunteer" style="width:60px; margin-bottom:15px;">
+            <h3>Volunteer Opportunities</h3>
+            <p>Find and join local orphanages where you can volunteer your time and skills.</p>
+        </div>
+
+        <div class="feature-card" style="background:white; border-radius:15px; padding:20px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+            <img src="donate-icon.png" alt="Donate" style="width:60px; margin-bottom:15px;">
+            <h3>Easy Donations</h3>
+            <p>Support children in need directly through the app with secure donation options.</p>
+        </div>
+
+        <div class="feature-card" style="background:white; border-radius:15px; padding:20px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+            <img src="events-icon.png" alt="Events" style="width:60px; margin-bottom:15px;">
+            <h3>Events & Campaigns</h3>
+            <p>Participate in charity events and campaigns organized by orphanages and volunteers.</p>
+        </div>
+
+        <div class="feature-card" style="background:white; border-radius:15px; padding:20px; width:250px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+            <img src="tracking-icon.png" alt="Tracking" style="width:60px; margin-bottom:15px;">
+            <h3>Impact Tracking</h3>
+            <p>Monitor how your contributions and volunteer work are making a real difference.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Screenshots Section -->
+<section id="screenshots" class="screenshots">
+    <h2>App Screenshots</h2>
+    <div class="carousel">
+          <img src="signIn.jpg" alt="App Screenshot 1">
+        <img src="signUp.jpg" alt="App Screenshot 2">
+        <img src="home.jpg" alt="App Screenshot 3">
+        <img src="location.jpg" alt="App Screenshot 4">
+        <img src="locationO.jpg" alt="App Screenshot 5">
+        <img src="orphanage.jpg" alt="App Screenshot 6">
+        <img src="donation.jpg" alt="App Screenshot 7">
+        <img src="fundraisers.jpg" alt="App Screenshot 8">
+        <img src="settings.jpg" alt="App Screenshot 9">
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">"OrphanConnect helped me find a local orphanage where I could volunteer." - Sarah L.</div>
+    <div class="testimonial">"The app is easy to use and connects me with wonderful children and caregivers." - John D.</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us / Stay Updated</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>Follow Us: 
+        <a href="#" style="color:white;">Facebook</a> | 
+        <a href="#" style="color:white;">Twitter</a> | 
+        <a href="#" style="color:white;">Instagram</a>
+    </p>
+     <p>
+        <a href="privacy.html" style="color:white;">Privacy Policy</a> | 
+        <a href="terms.html" style="color:white;">Terms of Use</a>
+    </p>
+    <p>&copy; 2025 OrphanConnect. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript for Fade-in Animation -->
+<script>
+const sections = document.querySelectorAll('section, header');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
