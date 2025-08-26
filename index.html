@@ -13,9 +13,7 @@ a { text-decoration: none; color: inherit; }
 section, header { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
 
 /* Navigation */
-nav { position: fixed; top:0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px 20px; display: flex; justify-content: center; gap: 30px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-nav a { font-weight: 700; color: #00796b; }
-nav a:hover { color: #004d40; }
+
 
 /* Hero Section */
 header {
@@ -80,36 +78,54 @@ footer { background: #5eafa5; color: white; text-align: center; padding: 20px; }
 .show { opacity: 1; transform: translateY(0); }
 
 /* Responsive */
+/* Navigation */
+nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+.logo { font-weight: 700; color: #00796b; text-decoration: none; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-weight: 700; color: #00796b; }
+.nav-links a:hover { color: #004d40; }
+.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+.hamburger div { width: 25px; height: 3px; background: #00796b; }
+
+/* Mobile */
 @media(max-width:768px){
-  header h1{font-size:2.5rem;}
-  header p{font-size:1.1rem;}
-  .carousel img{width:200px;}
-  .feature-card{width:200px;}
+  .nav-links { 
+    position: absolute; top: 60px; left: 0; background: rgba(255,255,255,0.95);
+    flex-direction: column; width: 100%; padding: 20px; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .nav-links a { margin-bottom: 15px; }
+  .hamburger { display: flex; }
+  .nav-links.active { display: flex; }
 }
 
-@media(max-width:480px){
-  header h1{font-size:2rem;}
-  header p{font-size:1rem;}
-  .download-buttons{flex-direction:column; gap:15px;}
-  .feature-cards{flex-direction:column; align-items:center; gap:20px;}
-  .feature-card{width:90%;}
-  .carousel img{width:180px;}
-  section{padding:20px 10px; margin:20px 0;}
-}
 
 </style>
 </head>
 <body>
 
 <!-- Navigation -->
+<!-- Navigation -->
+<!-- Navigation -->
 <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#features">Features</a>
-    <a href="#screenshots">Screenshots</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
+  <div class="nav-container">
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#hero" class="logo">OrphanConnect</a>
+  </div>
 </nav>
+
 
 
 <!-- Hero Section -->
@@ -223,6 +239,13 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 sections.forEach(section => observer.observe(section));
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 </script>
 
 </body>
